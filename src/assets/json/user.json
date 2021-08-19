@@ -1,0 +1,15 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "firstNameDefault",
+      "lastName": "lastNameDefault",
+      "userName": "admin",
+      "password": "admin",
+      "role": 1,
+      "isActive": true,
+      "questions": [1, 2],
+      "replies": ["admin1", "admin2"]
+    }
+  ]
+}

@@ -12,7 +12,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 // external modules
 import { AppRoutingModule } from './app-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MaterialModule } from './material/material/material.module';
+import { MaterialModule } from './material/material.module';
 
 // root component
 import { AppComponent } from './app.component';
