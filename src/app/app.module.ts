@@ -11,8 +11,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 // external modules
 import { AppRoutingModule } from './app-routing.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { MaterialModule } from './material/material.module';
 
 // root component
 import { AppComponent } from './app.component';
@@ -38,9 +36,6 @@ import { AppComponent } from './app.component';
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({}),
     EffectsModule.forRoot(),
-    // external modules
-    FlexLayoutModule,
-    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

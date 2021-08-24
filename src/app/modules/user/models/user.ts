@@ -1,4 +1,4 @@
-export interface User {
+export interface UserI {
   id?: string;
   firstName: string;
   lastName: string;
@@ -8,4 +8,6 @@ export interface User {
   isActive?: boolean;
   questions?: number[];
   replies?: string[];
+  creationDate: Date;
+  updateDate: Date;
 }
