@@ -41,7 +41,7 @@ export class LoginComponent {
         this.isChecked = false;
         this._snackBar.open('Bienvenido...', 'Cerrar');
         this.form.reset();
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       }else{
         this.isChecked = false;
         this._snackBar.open('Usuario o contraseña invalidos', 'Cerrar');
