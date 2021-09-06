@@ -1,1 +1,131 @@
-<p>register works!</p>
+<section class="text-center h-100">
+  <mat-horizontal-stepper class="h-100" linear labelPosition="bottom" #stepper>
+    <mat-step label="Usuario" [stepControl]="formUser" [editable]="isEditable" [hasError]="isErr && formUser.invalid">
+      <div class="step-custom-container">
+        <div class="h-100" fxLayout="row" fxLayoutAlign="center center">
+          <form [formGroup]="formUser" class="mb-3">
+            <mat-form-field>
+              <mat-label>Nombre</mat-label>
+              <input matInput type="text" placeholder="Nombre" formControlName="firstName" required>
+              <mat-error>
+                {{ showError(this.formUser.controls.firstName) }}
+              </mat-error>
+            </mat-form-field>
+    
+            <mat-form-field>
+              <mat-label>Apellido</mat-label>
+              <input matInput type="text" placeholder="Apellido" formControlName="lastName" required>
+              <mat-error>
+                {{ showError(this.formUser.controls.lastName) }}
+              </mat-error>
+            </mat-form-field>
+    
+            <mat-form-field>
+              <mat-label>Usuario</mat-label>
+              <input matInput type="text" placeholder="Usuario" formControlName="userName" required>
+              <mat-error>
+                {{ showError(this.formUser.controls.userName) }}
+              </mat-error>
+            </mat-form-field>
+    
+            <mat-form-field>
+              <mat-label>Clave</mat-label>
+              <input matInput type="password" placeholder="Escribe tu clave." formControlName="password" required>
+              <mat-error>
+                {{ showError(this.formUser.controls.password) }}
+              </mat-error>
+            </mat-form-field>
+    
+            <mat-form-field>
+              <mat-label>Repita la clave</mat-label>
+              <input matInput type="password" placeholder="Repita la clave" formControlName="repeatPassword" required>
+              <mat-error>
+                {{ showError(this.formUser.controls.repeatPassword) }}
+              </mat-error>
+            </mat-form-field>
+          </form>
+        </div>
+        <div class="mb-3" fxLayout="row" fxLayoutAlign="space-between  center">
+          <button mat-raised-button routerLink="/">
+            <mat-icon>exit_to_app</mat-icon>Salir
+          </button>
+          <button mat-raised-button [disabled]="this.formUser.invalid" color="primary" matStepperNext>Siguiente<mat-icon>arrow_forward</mat-icon></button>
+        </div>
+      </div>  
+    </mat-step>
+    <mat-step label="Seguridad" [stepControl]="formSecurity"  [editable]="isEditable">
+      <div class="step-custom-container">
+        <div class="h-100" fxLayout="row" fxLayoutAlign="center center">
+          <form [formGroup]="formSecurity" class="mb-3">
+            <mat-form-field>
+              <mat-label>Pregunta de seguridad</mat-label>
+              <mat-select formControlName="question1" required>
+                <mat-option value=1>¿Cuál es tu mascota favorita?</mat-option>
+                <mat-option value=2>¿Nombre de tu mejor amigo?</mat-option>
+                <mat-option value=3>¿Equipo de futbol favorito?</mat-option>
+                <mat-option value=4>¿Tipo de música que más te gusta?</mat-option>
+                <mat-option value=5>¿Nombre de tu madre o padre?</mat-option>
+              </mat-select>
+              <mat-error>
+                {{ showError(this.formSecurity.controls.question1) }}
+              </mat-error>
+            </mat-form-field>
+    
+            <mat-form-field>
+              <mat-label>Respuesta</mat-label>
+              <input matInput type="text" formControlName="reply1" placeholder="Escribe tu respuesta." required>
+              <mat-error>
+                {{ showError(this.formSecurity.controls.reply1) }}
+              </mat-error>
+            </mat-form-field>
+    
+            <mat-form-field>
+              <mat-label>Pregunta de seguridad</mat-label>
+              <mat-select formControlName="question2" required>
+                <mat-option value=1>¿Cuál es tu mascota favorita?</mat-option>
+                <mat-option value=2>¿Nombre de tu mejor amigo?</mat-option>
+                <mat-option value=3>¿Equipo de futbol favorito?</mat-option>
+                <mat-option value=4>¿Tipo de música que más te gusta?</mat-option>
+                <mat-option value=5>¿Nombre de tu madre o padre?</mat-option>
+              </mat-select>
+              <mat-error>
+                {{ showError(this.formSecurity.controls.question2) }}
+              </mat-error>
+            </mat-form-field>
+    
+            <mat-form-field>
+              <mat-label>Respuesta</mat-label>
+              <input matInput type="text" formControlName="reply2" placeholder="Escribe tu respuesta." required>
+              <mat-error>
+                {{ showError(this.formSecurity.controls.reply2) }}
+              </mat-error>
+            </mat-form-field>
+          </form>
+        </div>
+        <div  class="mb-3" fxLayout="row" fxLayoutAlign="space-between center">
+          <button mat-raised-button matStepperPrevious>
+            <mat-icon>arrow_back</mat-icon>
+            Volver
+          </button>
+          <button mat-raised-button [disabled]="this.formSecurity.invalid" color="primary"
+            (click)="onSubmit(stepper)">Guardar<mat-icon>save</mat-icon></button>
+        </div>
+      </div>
+    </mat-step>
+    <mat-step label="Registrado">
+      <div class="step-custom-container">
+        <div class="h-100" fxLayout="row" fxLayoutAlign="center center">
+          <h2>El usuario <strong>{{ userName }}</strong> se ha registrado.</h2>
+        </div>
+        <div class="mb-3" fxLayout="row" fxLayoutAlign="space-between center">
+          <button mat-raised-button routerLink="/">
+            <mat-icon>logout</mat-icon>  Inicio de Sesión
+          </button>
+          <button mat-raised-button color="primary" (click)="stepper.reset()">Registrar Nuevo  <mat-icon>person_add
+            </mat-icon></button>
+        </div>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</section>
+

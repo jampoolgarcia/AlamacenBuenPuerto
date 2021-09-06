@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
 import { environment } from 'src/environments/environment';
 import { UserI } from '../models/user';
-import { Observable } from 'rxjs';
 import { UserResetI } from '../models/reset';
-import { map } from 'rxjs/operators';
 
 const url_base = environment.url_base;
 
@@ -21,7 +18,13 @@ export class UserService {
   }
 
   saveRecord(data: UserI) {
-    return this.users.push(data);
+    let validUser = this.users.find(user => user.userName === data.userName);
+    if(validUser){
+      return false;
+    }else{
+      this.users.push(data);
+      return true;
+    }
   }
 
   getRecordByUserName(userName: string) {
