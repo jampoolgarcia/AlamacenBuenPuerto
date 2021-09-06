@@ -1,0 +1,59 @@
+[33mcommit 289d279c77c71d05da0ab7257bc6be445c12ca19[m[33m ([m[1;36mHEAD -> [m[1;32muserModule[m[33m)[m
+Author: jampool <jampoolgarcia@gmail.com>
+Date:   Mon Sep 6 17:28:52 2021 -0400
+
+    end commit
+
+[33mcommit 44789a809fbb996191cb06b49a82c9222792628c[m
+Author: jampool <jampoolgarcia@gmail.com>
+Date:   Mon Sep 6 16:53:36 2021 -0400
+
+    added template reset-password
+
+[33mcommit 863ff55feb9fc7253c37aa7340d9efccd398e114[m
+Author: jampool <jampoolgarcia@gmail.com>
+Date:   Mon Sep 6 16:18:01 2021 -0400
+
+    added logic reset-password
+
+[33mcommit 269117061f61481ef4c788b9cc5bcee4acf3fb8b[m
+Author: jampool <jampoolgarcia@gmail.com>
+Date:   Mon Sep 6 16:01:18 2021 -0400
+
+    added register component
+
+[33mcommit e378ea776d90c200675a5816a1e6c348de227295[m
+Author: jampool <jampoolgarcia@gmail.com>
+Date:   Tue Aug 24 15:02:52 2021 -0400
+
+    added login page: template, styles and ts; added user services
+
+[33mcommit ddab57a80f24d8b470a91d90fb1b367532e7f6bc[m
+Author: jampool <jampoolgarcia@gmail.com>
+Date:   Tue Aug 24 13:56:48 2021 -0400
+
+    added user structured
+
+[33mcommit 6c7c203bee6fa100e2d20833b2ef333741e54cf8[m
+Author: jampool <jampoolgarcia@gmail.com>
+Date:   Thu Aug 19 18:22:43 2021 -0400
+
+    added login, register and reset-password... and material module
+
+[33mcommit 2c4559f6c5e93b65fbda45842a0c060308c78053[m
+Author: jampool <jampoolgarcia@gmail.com>
+Date:   Wed Aug 18 18:36:23 2021 -0400
+
+    added auth module structure
+
+[33mcommit 20cb39af9149c5a1b95799972c555ced63a93308[m[33m ([m[1;32mmaster[m[33m)[m
+Author: jampool <jampoolgarcia@gmail.com>
+Date:   Wed Aug 18 18:28:46 2021 -0400
+
+    proyect structurect
+
+[33mcommit 50ddd9bbcb0e1c319ed58f93b9f3eb3767b6ec36[m
+Author: jampool <jampoolgarcia@gmail.com>
+Date:   Wed Aug 18 18:27:54 2021 -0400
+
+    start project structure
