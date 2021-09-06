@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { UserI } from '../models/user';
 import { UserResetI } from '../models/reset';
+import { HttpClient } from '@angular/common/http';
 
 const url_base = environment.url_base;
 
@@ -13,8 +14,10 @@ export class UserService {
   public users: UserI[] = [];
   public url: string = `${url_base}/json/user.json`;
 
-  constructor() { 
-
+  constructor(private _http: HttpClient) { 
+    this._http.get<any>(this.url).subscribe( data => {
+      this.users = data.users;
+    });
   }
 
   saveRecord(data: UserI) {

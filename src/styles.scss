@@ -394,3 +394,10 @@ mat-card-title{
 .z-index {
     z-index: 99999 !important;
 }
+
+.step-custom-container {
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
