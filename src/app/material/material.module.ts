@@ -29,6 +29,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 
+
 @NgModule({
   declarations: [],
   imports: [
@@ -59,6 +60,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatProgressSpinnerModule,
     MatBadgeModule,
     MatCheckboxModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
   ] 
 })
 export class MaterialModule { }

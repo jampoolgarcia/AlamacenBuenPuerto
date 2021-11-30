@@ -1,0 +1,35 @@
+<mat-toolbar class="mat-elevation-z6 z-index" color="primary">
+  <button
+    type="button"
+    aria-label="Toggle sidenav"
+    mat-icon-button
+    (click)="handleToggel()"
+    *ngIf="isHandset$ | async">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+  <button *ngIf="!(isHandset$ | async)" mat-button routerLink="/" class="text-x-large">
+    <mat-icon>local_hospital</mat-icon>
+    <span>Almacen Buen Puerto</span>
+  </button>
+  <span class="spacer"></span>
+
+  <button mat-button [matMenuTriggerFor]="userMenu">
+      <mat-icon>account_circle</mat-icon>
+      <span class="ml-1" fxHide.xs>{{ userFullName | uppercase }}</span>
+  </button>
+  <mat-menu #userMenu='matMenu'>
+    <button mat-menu-item routerLink="profile">
+        <mat-icon>person</mat-icon>
+        Perfil
+    </button>
+    <button mat-menu-item routerLink="list-user">
+        <mat-icon>list</mat-icon>
+        Lista de usuarios
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item (click)="onLogout()">
+        <mat-icon>logout</mat-icon>
+        Cerrar sesión
+    </button>
+  </mat-menu>
+</mat-toolbar>

@@ -1,1 +1,25 @@
-<p>home index works!</p>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [fixedTopGap]="(isHandset$ | async) ? 0 : 65"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list class="p-0">
+      <a *ngFor="let item of listLinkItem" mat-list-item [routerLink]="item.link" routerLinkActive="active">
+        <mat-icon fontSet="fa" [fontIcon]="item.icon" class="lg-icon mr-3" color="primary">
+        </mat-icon>
+        {{ item.title }}
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="ml-0">
+    <app-nav (eventToggle)="dawerToggle()"></app-nav>
+    <!-- Main Content -->
+    <section 
+        [ngClass]="{'ml-200': !(isHandset$ | async)}"
+        class="sidenav-section">
+        <div class="main-section">
+          <router-outlet></router-outlet>
+        </div>
+    </section>
+  </mat-sidenav-content>
+</mat-sidenav-container>
